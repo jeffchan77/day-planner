@@ -9,7 +9,7 @@ function updatetime() {
   var current = moment().format('H')
   for(var i = 0; i < time.length; i++) {
     if (parseInt(time[i]) > current) {
-      $('#' + time[i]).attr('style', 'background-color: green')
+      $('#' + time[i]).attr('style', 'background-color: lightgreen')
     }
     else if (parseInt(time[i]) < current) {
       $('#' + time[i]).attr('style', 'background-color: lightgray')
