@@ -2,25 +2,20 @@ var date = moment().format('MMMM Do YYYY, h:mm:ss a')
 $('#currentDay').append(date)
 
 
-var timeOfday = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
+var time = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
 updatetime();
 
 function updatetime() {
-  var currentTime = moment().format('H');
-  for(var i = 0; i < timeOfday.length; i++) {
-
-    if (parseInt(timeOfday[i]) > currentTime) {
-      $("#" + timeOfday[i]).attr("style", "background-color: #58ce7b");
-
-
+  var current = moment().format('H')
+  for(var i = 0; i < time.length; i++) {
+    if (parseInt(time[i]) > current) {
+      $('#' + time[i]).attr('style', 'background-color: green')
     }
-    else if (parseInt(timeOfday[i]) < currentTime) {
-      $("#" + timeOfday[i]).attr("style", "background-color: lightgray");
-
+    else if (parseInt(time[i]) < current) {
+      $('#' + time[i]).attr('style', 'background-color: lightgray')
     }
-    else if (parseInt(timeOfday[i]) == currentTime) {
-      $("#" + timeOfday[i]).attr("style", "background-color: #fc665e");
-    
+    else if (parseInt(time[i]) == current) {
+      $('#' + time[i]).attr('style', 'background-color: red')
     }
   }
 }
